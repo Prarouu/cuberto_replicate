@@ -1,9 +1,9 @@
 import React from "react";
 import { motion, scale } from "framer-motion";
 import circlesvg from "../assets/images/footer/SVG Download.svg";
-import animatedCircleGif from "/Users/praroop/Documents/cuberto_repo/src/assets/images/footer/circle.webm";
+import animatedCircleGif from "../assets/images/footer/circle.webm";
 import Marquee from "react-fast-marquee";
-import { li } from "framer-motion/client";
+import Ropes from "../assets/videos/footer/Ropes video.mp4";
 
 function Footer() {
   const socialHandles = {
@@ -94,15 +94,20 @@ function Footer() {
 
         {/* 2nd div - social handles */}
         <div>
-          <h1 className="text-2xl font-extralight flex items-center pl-32 h-38">
+          <motion.h1
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 2, ease: [0.2, 0.71, 0.1, 1.01] }}
+            className="text-2xl font-extralight flex items-center pl-32 h-38 overflow-hidden"
+          >
             SOCIAL MEDIA AND CONTACTS
-          </h1>
+          </motion.h1>
           <div className="h-auto">
             <ul className="w-full h-full">
               {Object.keys(socialHandles).map((item) => (
                 <motion.li
                   key={item}
-                  className="relative text-xl overflow-hidden h-32 border-b border-white/50"
+                  className="relative text-xl overflow-hidden h-32  origin-left border-white/50"
                   initial="rest"
                   whileHover="hover"
                 >
@@ -112,8 +117,28 @@ function Footer() {
                       className="absolute top-0 left-0 w-full h-full bg-black text-white flex justify-between items-center px-32 z-0"
                       style={{ transformOrigin: "center" }}
                     >
-                      <h1 className="text-3xl font-extralight">{item}</h1>
-                      <i className="ri-arrow-right-up-line text-5xl"></i>
+                      <motion.h1
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        transition={{
+                          duration: 2,
+                          ease: [0.2, 0.71, 0.1, 1.01],
+                        }}
+                        className="text-3xl font-extralight overflow-hidden"
+                      >
+                        {item}
+                      </motion.h1>
+
+                      <motion.i
+                        initial={{ y: "200%" }}
+                        animate={{ y: 0 }}
+                        transition={{
+                          duration: 2,
+                          ease: [0.2, 0.71, 0.1, 1.01],
+                          delay: 1,
+                        }}
+                        className="ri-arrow-right-up-line text-5xl"
+                      ></motion.i>
                     </motion.div>
 
                     {/* Marquee white list */}
@@ -153,28 +178,62 @@ function Footer() {
                           <i className="ri-arrow-right-up-line text-5xl"></i>
                           <h1 className="text-3xl font-extralight">{item}</h1>
                           <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
+                          <h1 className="text-3xl font-extralight">{item}</h1>
+                          <i className="ri-arrow-right-up-line text-5xl"></i>
                         </div>
                       </Marquee>
                     </motion.div>
                   </a>
+                  <motion.hr
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 1, ease: [0.5, 0, 0.75, 0] }}
+                    className="absolute bottom-0 border-t-[1px] origin-left w-full border-white/50"
+                  />
                 </motion.li>
               ))}
-              <hr className="border-t border-white/50" />
             </ul>
           </div>
         </div>
 
         {/* 3rd div - copyright */}
 
-        <div className="h-128 w-[100%]  px-12 py-24 flex justify-start space-x-48 items-center">
+        <div className="h-128 w-[100%]  px-12 py-24 mb-38 flex justify-start space-x-48 items-center">
           <div className="flex flex-col justify-between py-12 w-[30%] h-full ">
             <div className="flex flex-wrap justify-between space-x-2 ">
-              <h1 className="text-xl text-gray-300 font-extralight">
+              <motion.h1
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, ease: [0.5, 0, 0.75, 0] }}
+                className="text-xl text-gray-300 font-extralight overflow-hidden"
+              >
                 MAIN OFFICE
-              </h1>
-              <p className="text-3xl font-extralight">
+              </motion.h1>
+              <motion.p className="text-3xl font-extralight">
                 901 N Pit Street Alexandria VA, 22314
-              </p>
+              </motion.p>
             </div>
             <motion.button
               variants={{
@@ -207,12 +266,12 @@ function Footer() {
           </div>
           <div className="flex flex-col justify-between py-12 w-[30%] h-full ">
             <div className="flex flex-wrap justify-between space-x-2 ">
-              <h1 className="text-xl text-gray-300 font-extralight">
+              <motion.h1 className="text-xl text-gray-300 font-extralight">
                 SECOND OFFICE
-              </h1>
-              <p className="text-3xl font-extralight">
+              </motion.h1>
+              <motion.p className="text-3xl font-extralight">
                 Na Perstyne 342/1, 11000 Parague
-              </p>
+              </motion.p>
             </div>
             <motion.button
               variants={{
@@ -247,6 +306,126 @@ function Footer() {
       </div>
 
       {/* lower footer */}
+      <div className="h-screen w-screen relative overflow-hidden">
+        <div className="h-screen w-screen relative overflow-hidden">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src={Ropes}
+            autoPlay
+            loop
+            muted
+          />
+          <motion.a
+            href="/"
+            initial="rest"
+            whileHover="hover"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 h-[20%] flex justify-center items-center bg-transparent text-white z-20"
+            style={{ textDecoration: "none" }}
+          >
+            <motion.div
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="px-8 py-2 flex flex-col justify-center items-center cursor-pointer"
+            >
+              <h1 className="text-xl">PRIVACY POLICY</h1>
+              <motion.span
+                variants={{
+                  rest: { scaleX: 0 },
+                  hover: { scaleX: 1 },
+                }}
+                transition={{ duration: 0.4, ease: [0.4, 0.01, 0.165, 0.99] }}
+                className="w-full h-[2px] bg-white border-t border-white origin-left block"
+                style={{ transformOrigin: "center" }}
+              ></motion.span>
+            </motion.div>
+          </motion.a>
+        </div>
+
+        <div className="absolute top-0 w-full h-[80%] flex flex-col justify-center items-center  text-white z-10">
+          <h1 className="w-full text-center text-[200px] leading-none">Have</h1>
+          <h1 className="w-full text-center font-extralight italic text-[200px] leading-none">
+            an idea?
+          </h1>
+          <motion.button
+            initial="rest_button_big"
+            whileHover="hover_button_big"
+            className="w-[50%] h-[200px] text-[200px] leading-none border-white border-1 rounded-full bg-transparent text-center overflow-hidden"
+          >
+            <motion.div
+              variants={{
+                rest_button_big: { y: 0 },
+                hover_button_big: { y: ["0%", "-100%"] },
+              }}
+              transition={{
+                duration: 0.5,
+                ease: [0.83, 0, 0.17, 1],
+              }}
+              className="w-full h-full"
+            >
+              <div className="w-full h-full">TELL US</div>
+              <div className="w-full h-full bg-white text-black">TELL US</div>
+            </motion.div>
+          </motion.button>
+        </div>
+
+        <div className="absolute bottom-0 w-[30%] h-[20%]  flex justify-between items-center px-8 ">
+          <motion.button
+            variants={{
+              rest: { scale: 1 }, // Default state
+              hover: { scale: 1.05 }, // Slight scale pop on hover
+            }}
+            initial="rest" // Initial state
+            whileHover="hover" // Trigger the hover variant
+            className="h-8 text-xl w-[45%] border-solid border-white/50 border-1 rounded-full bg-black mx-auto overflow-hidden z-10"
+          >
+            <motion.div
+              variants={{
+                rest: { y: 0 }, // Default position
+                hover: { y: ["0%", "-100%"] }, // Move up on hover
+              }}
+              transition={{
+                duration: 1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="w-full h-full"
+            >
+              <div className="h-full flex justify-center items-center text-white">
+                INFO@CUBERTO.COM
+              </div>
+              <div className="h-full bg-white text-black rounded-4xl flex justify-center items-center">
+                INFO@CUBERTO.COM
+              </div>
+            </motion.div>
+          </motion.button>
+          <motion.button
+            variants={{
+              rest: { scale: 1 }, // Default state
+              hover: { scale: 1.05 }, // Slight scale pop on hover
+            }}
+            initial="rest" // Initial state
+            whileHover="hover" // Trigger the hover variant
+            className="h-8 text-xl w-[40%] border-solid border-white/50 border-1 rounded-full bg-black mx-auto overflow-hidden"
+          >
+            <motion.div
+              variants={{
+                rest: { y: 0 }, // Default position
+                hover: { y: ["0%", "-100%"] }, // Move up on hover
+              }}
+              transition={{
+                duration: 1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="w-full h-full"
+            >
+              <div className="h-full flex justify-center items-center text-white">
+                +1 0301 549 9309
+              </div>
+              <div className="h-full bg-white text-black rounded-4xl flex justify-center items-center">
+                +1 0301 549 9309
+              </div>
+            </motion.div>
+          </motion.button>
+        </div>
+      </div>
     </>
   );
 }
