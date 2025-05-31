@@ -1,10 +1,3 @@
-import { useEffect } from "react";
-
-import heroVideo from "../assets/videos/Cuberto Header.mp4";
-import heroVideoShort from "../assets/videos/Cuberto Showreel.mp4";
-import Cvideo from "../assets/videos/C 3d.mp4";
-import featuredTitleVideo from "../assets/videos/Cuberto Header (1).mp4";
-
 import { motion } from "framer-motion";
 
 function Home() {
@@ -90,7 +83,8 @@ function HeroSection() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1, ease: [0, 0.55, 0.45, 1], delay: 0.4 }}
-            src={heroVideo}
+            preload="auto"
+            src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Cuberto%20Header%20(1).webm"
             className="w-42 rounded-full"
             autoPlay
             loop
@@ -161,7 +155,9 @@ function HeroSection() {
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
           transition={{ duration: 1, ease: [0, 0.55, 0.45, 1] }}
-          src={heroVideoShort}
+          preload="auto"
+          src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Cuberto%20Showreel.webm
+"
           className="w-full h-full object-cover z-0 origin-bottom "
           autoPlay
           loop
@@ -187,7 +183,9 @@ function WhatWeDo() {
             delay: 0.5,
           }}
           viewport={{ once: true, margin: "200px" }}
-          src={Cvideo}
+          preload="auto"
+          src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/C%203D%20(1).webm
+"
           autoPlay
           muted
           loop
@@ -396,7 +394,9 @@ function FeaturedProducts() {
             }}
             viewport={{ once: true }}
             className="h-full rounded-full"
-            src={featuredTitleVideo}
+            preload="auto"
+            src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Cuberto%20Header.webm
+"
             autoPlay
             loop
             muted
@@ -555,7 +555,9 @@ function PhylosophySection() {
               delay: 0.1,
             }}
             viewport={{ once: true }}
-            src={bubbleVideo}
+            preload="auto"
+            src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Circles%20Balls%20(1).webm
+"
             autoPlay
             loop
             muted
@@ -806,7 +808,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>
@@ -816,7 +820,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>
@@ -826,7 +832,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>
@@ -836,7 +844,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>
@@ -846,7 +856,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>
@@ -856,7 +868,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>
@@ -866,7 +880,9 @@ function InspirationSection() {
               autoPlay
               loop
               muted
-              src={inspoSectionVideo}
+              preload="auto"
+              src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Header%20video%20from%20CloudConvert.webm
+"
             ></video>
             <h1>New Day</h1>
             <i class="ri-subtract-fill"></i>

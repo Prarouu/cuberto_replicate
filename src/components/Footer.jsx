@@ -356,7 +356,8 @@ function Footer() {
         <div className="h-screen w-screen relative overflow-hidden">
           <video
             className="absolute inset-0 w-full h-full object-cover"
-            src={Ropes}
+            src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Ropes%20Video%20from%20CloudConvert.webm
+"
             autoPlay
             loop
             muted
