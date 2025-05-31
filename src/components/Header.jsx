@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 
 function Header() {
@@ -26,13 +26,19 @@ function Header() {
     Contact: "/",
   };
 
+  useEffect(() => {
+    if (window.Shery) {
+      window.Shery.makeMagnet(".magnet");
+    }
+  }, []);
+
   return (
     <>
-      <nav className="flex justify-between items-center h-28 w-full px-12">
+      <nav className="flex justify-between items-center h-28 w-full px-12 ">
         <div>
           <a href="/">
             <img
-              className="h-14 w-auto object-cover"
+              className="h-14 w-auto object-cover magnet"
               src="https://searchvectorlogo.com/wp-content/uploads/2020/12/cuberto-logo-vector.png"
               alt=""
             />
@@ -44,7 +50,7 @@ function Header() {
             className="h-6 w-full flex justify-between items-center"
           >
             <h1 className="text-2xl font-extralight">menu</h1>
-            <i className="ri-menu-5-line text-2xl fixed right-14 z-30"></i>
+            <i className="ri-menu-5-line text-2xl fixed right-14 z-30 magnet"></i>
           </button>
         </div>
 
@@ -63,7 +69,7 @@ function Header() {
               onClick={handleMenu}
               className="absolute h-full w-1/5 right-0 top-0"
             >
-              <i className="ri-collapse-horizontal-line text-3xl"></i>
+              <i className="ri-collapse-horizontal-line text-3xl magnet"></i>
             </button>
           </div>
           {/* Social Media and Menu */}
@@ -144,7 +150,9 @@ function Header() {
                   whileHover="hover"
                   className="bg-transparent"
                 >
-                  <h1 className="text-2xl p-1 text-black">info@cuberto.com</h1>
+                  <h1 className="lg:text-lg 2xl:text-2xl p-1 text-black">
+                    info@cuberto.com
+                  </h1>
                   <motion.span
                     variants={{
                       rest: { scaleX: 0 },
@@ -165,7 +173,9 @@ function Header() {
                   whileHover="hover"
                   className="bg-transparent"
                 >
-                  <h1 className="text-2xl p-1 text-black">Our Workflow</h1>
+                  <h1 className="lg:text-lg 2xl:text-2xl p-1 text-black">
+                    Our Workflow
+                  </h1>
                   <motion.span
                     variants={{
                       rest: { scaleX: 0 },

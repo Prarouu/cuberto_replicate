@@ -1,11 +1,26 @@
-import React from "react";
-import { motion, scale } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import circlesvg from "../assets/images/footer/SVG Download.svg";
 import animatedCircleGif from "../assets/images/footer/circle.webm";
 import Marquee from "react-fast-marquee";
 import Ropes from "../assets/videos/footer/Ropes video.mp4";
 
 function Footer() {
+  const fadeIntextAnimationVarients = {
+    before: {
+      opacity: 0,
+      y: "100%",
+    },
+    after: {
+      opacity: 1,
+      y: 0,
+    },
+    timing: {
+      duration: 1,
+      ease: [0.65, 0, 0.35, 1],
+    },
+  };
+
   const socialHandles = {
     Linkdin: "/",
     Behance: "/",
@@ -20,6 +35,11 @@ function Footer() {
     marquee:
       "h-32 w-full bg-white text-black text-3xl flex justify-between items-center ",
   };
+
+  const officeText1 = "MAIN OFFICE";
+  const officeText2 = "SECOND OFFICE";
+  const officeAddress1 = "901 N Pit Street Alexandria VA, 22314";
+  const officeAddress2 = "Na Perstyne 342/1, 11000 Parague";
 
   return (
     <>
@@ -95,9 +115,12 @@ function Footer() {
         {/* 2nd div - social handles */}
         <div>
           <motion.h1
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 2, ease: [0.2, 0.71, 0.1, 1.01] }}
+            variants={fadeIntextAnimationVarients}
+            initial="before"
+            animate="after"
+            transition="timing"
+            whileInView={true}
+            viewport={{ once: true }}
             className="text-2xl font-extralight flex items-center pl-32 h-38 overflow-hidden"
           >
             SOCIAL MEDIA AND CONTACTS
@@ -118,25 +141,24 @@ function Footer() {
                       style={{ transformOrigin: "center" }}
                     >
                       <motion.h1
-                        initial={{ y: "100%" }}
-                        animate={{ y: 0 }}
-                        transition={{
-                          duration: 2,
-                          ease: [0.2, 0.71, 0.1, 1.01],
-                        }}
+                        variants={fadeIntextAnimationVarients}
+                        initial="before"
+                        animate="after"
+                        transition="timing"
+                        whileInView={true}
+                        viewport={{ once: true }}
                         className="text-3xl font-extralight overflow-hidden"
                       >
                         {item}
                       </motion.h1>
 
                       <motion.i
-                        initial={{ y: "200%" }}
-                        animate={{ y: 0 }}
-                        transition={{
-                          duration: 2,
-                          ease: [0.2, 0.71, 0.1, 1.01],
-                          delay: 1,
-                        }}
+                        variants={fadeIntextAnimationVarients}
+                        initial="before"
+                        animate="after"
+                        transition="timing"
+                        whileInView={true}
+                        viewport={{ once: true }}
                         className="ri-arrow-right-up-line text-5xl"
                       ></motion.i>
                     </motion.div>
@@ -178,37 +200,14 @@ function Footer() {
                           <i className="ri-arrow-right-up-line text-5xl"></i>
                           <h1 className="text-3xl font-extralight">{item}</h1>
                           <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
-                          <h1 className="text-3xl font-extralight">{item}</h1>
-                          <i className="ri-arrow-right-up-line text-5xl"></i>
                         </div>
                       </Marquee>
                     </motion.div>
                   </a>
                   <motion.hr
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    whileInView={{ scaleX: 1, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1, ease: [0.5, 0, 0.75, 0] }}
                     className="absolute bottom-0 border-t-[1px] origin-left w-full border-white/50"
                   />
@@ -223,17 +222,36 @@ function Footer() {
         <div className="h-128 w-[100%]  px-12 py-24 mb-38 flex justify-start space-x-48 items-center">
           <div className="flex flex-col justify-between py-12 w-[30%] h-full ">
             <div className="flex flex-wrap justify-between space-x-2 ">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, ease: [0.5, 0, 0.75, 0] }}
-                className="text-xl text-gray-300 font-extralight overflow-hidden"
-              >
-                MAIN OFFICE
-              </motion.h1>
-              <motion.p className="text-3xl font-extralight">
-                901 N Pit Street Alexandria VA, 22314
-              </motion.p>
+              <div className="w-auto h-8 overflow-hidden">
+                <motion.h1
+                  variants={fadeIntextAnimationVarients}
+                  initial="before"
+                  animate="after"
+                  transition="timing"
+                  whileInView={true}
+                  viewport={{ once: true }}
+                  className="text-xl text-gray-300 font-extralight"
+                >
+                  MAIN OFFICE
+                </motion.h1>
+              </div>
+              <div className="w-auto h-18 overflow-hidden">
+                <motion.p
+                  variants={fadeIntextAnimationVarients}
+                  initial="before"
+                  animate="after"
+                  transition={{
+                    duration: fadeIntextAnimationVarients.timing.duration,
+                    ease: fadeIntextAnimationVarients.timing.ease,
+                    delay: 0.3,
+                  }}
+                  whileInView={true}
+                  viewport={{ once: true }}
+                  className="text-3xl font-extralight"
+                >
+                  901 N Pit Street Alexandria VA, 22314
+                </motion.p>
+              </div>
             </div>
             <motion.button
               variants={{
@@ -264,14 +282,42 @@ function Footer() {
               </motion.div>
             </motion.button>
           </div>
-          <div className="flex flex-col justify-between py-12 w-[30%] h-full ">
+          <div className="flex flex-col justify-between py-12 w-[30%] h-full">
             <div className="flex flex-wrap justify-between space-x-2 ">
-              <motion.h1 className="text-xl text-gray-300 font-extralight">
-                SECOND OFFICE
-              </motion.h1>
-              <motion.p className="text-3xl font-extralight">
-                Na Perstyne 342/1, 11000 Parague
-              </motion.p>
+              <div className="w-auto h-8 overflow-hidden">
+                <motion.h1
+                  variants={fadeIntextAnimationVarients}
+                  initial="before"
+                  animate="after"
+                  transition={{
+                    duration: fadeIntextAnimationVarients.timing.duration,
+                    ease: fadeIntextAnimationVarients.timing.ease,
+                    delay: 0.6,
+                  }}
+                  whileInView={true}
+                  viewport={{ once: true }}
+                  className="text-xl text-gray-300 font-extralight"
+                >
+                  SECOND OFFICE
+                </motion.h1>
+              </div>
+              <div className="w-auto h-10 overflow-hidden">
+                <motion.p
+                  variants={fadeIntextAnimationVarients}
+                  initial="before"
+                  animate="after"
+                  transition={{
+                    duration: fadeIntextAnimationVarients.timing.duration,
+                    ease: fadeIntextAnimationVarients.timing.ease,
+                    delay: 0.9,
+                  }}
+                  whileInView={true}
+                  viewport={{ once: true }}
+                  className="text-3xl font-extralight"
+                >
+                  Na Perstyne 342/1, 11000 Parague
+                </motion.p>
+              </div>
             </div>
             <motion.button
               variants={{
@@ -315,6 +361,7 @@ function Footer() {
             loop
             muted
           />
+
           <motion.a
             href="/"
             initial="rest"
@@ -341,10 +388,40 @@ function Footer() {
         </div>
 
         <div className="absolute top-0 w-full h-[80%] flex flex-col justify-center items-center  text-white z-10">
-          <h1 className="w-full text-center text-[200px] leading-none">Have</h1>
-          <h1 className="w-full text-center font-extralight italic text-[200px] leading-none">
-            an idea?
-          </h1>
+          <div className="w-full h-auto overflow-hidden">
+            <motion.h1
+              variants={fadeIntextAnimationVarients}
+              initial="before"
+              animate="after"
+              transition={{
+                duration: fadeIntextAnimationVarients.timing.duration,
+                ease: fadeIntextAnimationVarients.timing.ease,
+              }}
+              whileInView={true}
+              viewport={{ once: true }}
+              className="w-full text-center text-[200px] leading-none"
+            >
+              Have
+            </motion.h1>
+          </div>
+          <div className="w-full h-auto overflow-hidden">
+            <motion.h1
+              variants={fadeIntextAnimationVarients}
+              initial="before"
+              animate="after"
+              transition={{
+                duration: fadeIntextAnimationVarients.timing.duration,
+                ease: fadeIntextAnimationVarients.timing.ease,
+                delay: 0.3,
+              }}
+              whileInView={true}
+              viewport={{ once: true }}
+              className="w-full text-center font-extralight italic text-[200px] leading-none"
+            >
+              an idea?
+            </motion.h1>
+          </div>
+
           <motion.button
             initial="rest_button_big"
             whileHover="hover_button_big"
