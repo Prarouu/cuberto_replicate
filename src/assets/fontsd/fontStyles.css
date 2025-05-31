@@ -5,8 +5,8 @@
   font-style: normal;
 }
 @font-face {
-    font-family: Matter-Light;
+    font-family: Matter;
     src: url("src/assets/fontsd/Matter Light Font.woff2") format('woff2');
-    font-weight: lighter;
+    font-weight: 200;
     font-style: normal;
 }
