@@ -498,8 +498,6 @@ function FeaturedProducts() {
   );
 }
 
-import bubbleVideo from "../assets/videos/circles balls.mp4";
-
 function PhylosophySection() {
   return (
     <section className="relative w-full min-h-[120vh] bg-black flex items-end">
@@ -616,7 +614,6 @@ import MImg3 from "../assets/images/home-marquee/Image 904x510 (2).png";
 import MImg4 from "../assets/images/home-marquee/Image 904x510 (4).png";
 import MImg5 from "../assets/images/home-marquee/Image 904x510.jpg";
 import MImg6 from "../assets/images/home-marquee/Image 904x510 (3).png";
-import { div, img } from "framer-motion/client";
 
 const recourceData = {
   element1: {
@@ -775,7 +772,6 @@ function ResourceSection() {
 }
 
 import Marquee from "react-fast-marquee";
-import inspoSectionVideo from "../assets/videos/Header video.mp4";
 
 import img1 from "../assets/images/home-marquee/inspo section marquee/Original Image 400x300 (1).png";
 import img2 from "../assets/images/home-marquee/inspo section marquee/Original Image 400x300 (2).png";
