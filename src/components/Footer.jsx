@@ -1,9 +1,7 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import circlesvg from "../assets/images/footer/SVG Download.svg";
 import animatedCircleGif from "../assets/images/footer/circle.webm";
 import Marquee from "react-fast-marquee";
-import Ropes from "../assets/videos/footer/Ropes video.mp4";
 
 function Footer() {
   const fadeIntextAnimationVarients = {
@@ -356,6 +354,7 @@ function Footer() {
         <div className="h-screen w-screen relative overflow-hidden">
           <video
             className="absolute inset-0 w-full h-full object-cover"
+            preload="auto"
             src="https://cdn.jsdelivr.net/gh/Prarouu/cuberto_replicate@main/public/Ropes%20Video%20from%20CloudConvert.webm
 "
             autoPlay
