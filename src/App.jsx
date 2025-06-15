@@ -40,12 +40,12 @@ function App() {
       <Header />
       <Home />
       <Footer />
-      <div className="xl:hidden fixed inset-0 bg-black z-[20] flex items-center justify-center">
+      <div className="xl:hidden fixed inset-0 bg-black z-30 flex items-center justify-center">
         <h1 className="text-2xl text-white font-bold text-center px-4">
           Open on Desktop or Laptop for best experience
         </h1>
       </div>
-      <div className="fixed bottom-0 right-0 w-48 h-48  z-30">
+      <div className="fixed bottom-0 right-0 w-48 h-48  z-20">
         <motion.img
           animate={{ rotate: 360 }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
